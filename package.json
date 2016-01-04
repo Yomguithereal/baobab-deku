@@ -1,0 +1,36 @@
+{
+  "name": "baobab-deku",
+  "version": "0.0.1",
+  "description": "Simple helpers to use Baobab with deku.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yomguithereal/baobab-deku.git"
+  },
+  "keywords": [
+    "baobab",
+    "deku"
+  ],
+  "contributors": [
+    {
+      "name": "Guillaume Plique",
+      "url": "http://github.com/Yomguithereal"
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yomguithereal/baobab-deku/issues"
+  },
+  "homepage": "https://github.com/yomguithereal/baobab-deku#readme",
+  "devDependencies": {
+    "baobab": "^2.2.1",
+    "deku": "^2.0.0-rc7",
+    "mocha": "^2.3.4"
+  },
+  "dependencies": {
+    "object-assign": "^4.0.1"
+  }
+}
