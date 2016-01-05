@@ -1,7 +1,7 @@
 {
   "name": "baobab-deku",
   "version": "0.0.1",
-  "description": "Simple helpers to use Baobab with deku.",
+  "description": "Simple helpers to use Baobab along with deku.",
   "main": "index.js",
   "scripts": {
     "test": "mocha ./test.js"
