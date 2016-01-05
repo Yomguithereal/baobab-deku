@@ -9,7 +9,9 @@ var assert = require('assert'),
     lib = require('./index.js');
 
 var createDispatcher = lib.createDispatcher,
-    branch = lib.branch;
+    branch = lib.branch,
+    render = deku.string.renderString,
+    h = deku.element;
 
 /**
  * Dispatcher.
@@ -41,5 +43,35 @@ describe('#branch', function() {
     assert.throws(function() {
       branch(null, {});
     }, /invalid/);
+  });
+
+  it('should throw if the tree is not found in context.', function() {
+    var tree = new Baobab({name: 'John'}, {asynchronous: false});
+
+    var composedComponent = branch({name: ['name']}, function(model) {
+      return h('div', null, ['Hello']);
+    });
+
+    assert.throws(function() {
+      render(h(composedComponent));
+    }, /tree in context/);
+  });
+
+  it('should properly pass props to the composed components.', function() {
+    var tree = new Baobab({name: 'John'}, {asynchronous: false});
+
+    var composedComponent = branch({name: ['name']}, function(model) {
+      return h('div', null, model.props.name);
+    });
+
+    var html = render(h(composedComponent), {tree: tree});
+
+    assert.strictEqual(html, '<div>John</div>');
+
+    tree.set('name', 'Jack');
+
+    var html = render(h(composedComponent), {tree: tree});
+
+    assert.strictEqual(html, '<div>Jack</div>');
   });
 });
