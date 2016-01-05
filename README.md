@@ -26,12 +26,12 @@ const {createRenderer} = dom;
 const tree = new Baobab({counter: 0});
 
 // 2. Creating actions to mutate the counter
-function increment(tree) {
-  tree.apply('counter', nb => nb + 1);
+function increment(tree, by = 1) {
+  tree.apply('counter', nb => nb + by);
 }
 
-function decrement(tree) {
-  tree.apply('counter', nb => nb - 1);
+function decrement(tree, by = 1) {
+  tree.apply('counter', nb => nb - by);
 }
 
 // 3. Creating our dispatcher & renderer
@@ -46,6 +46,10 @@ const Counter = branch({counter: ['counter']}, ({dispatch, props}) => {
       <div>
         <button onClick={dispatch(decrement)}>-</button>
         <button onClick={dispatch(increment)}>+</button>
+      </div>
+      <div>
+        <button onClick={dispatch(decrement, 10)}>-10</button>
+        <button onClick={dispatch(increment, 10)}>+10</button>
       </div>
     </div>
   );
