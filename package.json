@@ -4,7 +4,7 @@
   "description": "Simple helpers to use Baobab with deku.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha ./test.js"
   },
   "repository": {
     "type": "git",
@@ -27,7 +27,7 @@
   "homepage": "https://github.com/yomguithereal/baobab-deku#readme",
   "devDependencies": {
     "baobab": "^2.2.1",
-    "deku": "^2.0.0-rc7",
+    "deku": "^2.0.0-rc8",
     "mocha": "^2.3.4"
   },
   "dependencies": {

@@ -24,7 +24,7 @@ exports.createDispatcher = function(tree) {
  * Higher order function that will map paths of the tree to props.
  */
 exports.branch = function(mapping, Component) {
-  if (!type.object(mapping))
+  if (!type.watcherMapping(mapping))
     throw Error('baobab-deku.branch: invalid mapping.');
 
   return {
