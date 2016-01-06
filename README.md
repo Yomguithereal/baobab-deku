@@ -57,7 +57,7 @@ const Counter = branch({counter: ['counter']}, ({dispatch, props}) => {
 
 // 5. Rendering our app, pass the tree as context & refreshing on tree update
 function refresh() {
-  render(<Counter />);
+  render(<Counter />, {tree});
 }
 
 tree.on('update', refresh);
